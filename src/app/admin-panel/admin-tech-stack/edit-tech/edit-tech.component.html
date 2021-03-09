@@ -1,0 +1,21 @@
+<h3 style="background-color: #1a4a72; text-align: center; color: white; padding: 5px">
+  #
+</h3>
+<div class="mt-3 ml-5 mr-5">
+  <div>
+    <div class="row">
+      <div class="col-9"><input class="form-control" type = "text" placeholder="Type Tool Name" [(ngModel)]="toolName"></div>
+      <div class="col-3"> <button [disabled]="!isValid()" class="btn btn-primary" (click) = "onAdd()"> Add Tool </button></div>
+    </div>
+  </div>
+  <div class="mt-3">
+    <h3>{{techName}} : </h3>
+
+    <ul class="list-group" *ngFor="let tool of tools">
+      <li class="list-group-item">
+        <span class="mr-3"> {{tool.ToolName}} </span>
+        <span class="ml-5 btn btn-small btn-danger" (click)="onDelete(tool.Id)"> x </span>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<h3 style="background-color: #1a4a72; text-align: center; color: white; padding: 5px">
+Login</h3>
+
+ <div class="mt-3 ml-5 mr-5">
+  <div>
+    <!--<div>
+      <div class="row">
+        <div class="col-9"><input class="form-control" type = "text" placeholder="Type Technology Name" [(ngModel)]="techName"></div>
+        <div class="col-3"> <button [disabled]="!isValid()" class="btn btn-primary" (click) = "onAdd()"> Add Technology </button></div>
+      </div>
+
+    </div>-->
+  </div>
+  <!--<table class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th>Technology</th>
+        <th>Tools</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of data; let i = index">
+    <tr>
+      <td>{{item.Tech}}</td>
+      <td> {{tools[i].join(', ')}} </td>
+      <td>
+        <button (click)="onEdit(item.Id)" class="btn btn-outline-primary mr-2"> Edit </button>
+        <button (click)="onDelete(item.Id)" class="btn btn-outline-danger ml-2"> Delete </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>-->
+
+</div> 
+<div class="col-md-6 offset-md-3 mt-5">
+    <div class="card">
+        <h4 class="card-header">Registration</h4>
+        <div class="card-body">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" formControlName="username" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" formControlName="email" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone No</label>
+                    <input type="text" formControlName="phone" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.required">Phone No is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="access">Access Lebel</label>
+                    <input type="text" formControlName="access" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.access.errors }" />
+                    <div *ngIf="submitted && f.access.errors" class="invalid-feedback">
+                        <div *ngIf="f.access.errors.required">Access_lebel No is required</div>
+                    </div>
+                </div>
+
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Register
+                </button>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
+        </div>
+    </div>
+</div>

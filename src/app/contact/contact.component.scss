@@ -1,0 +1,61 @@
+.wb {
+    word-break: break-all;
+    width: 140px;
+    border: 1px solid green;
+}
+.wr {
+    word-wrap: break-word;
+    text-align: center;
+}
+.main1 {
+    width:50%;
+    float:left;
+}
+.main2 {
+    width:50%;
+
+}
+
+h2.contactTitle {
+    text-align: center;
+    margin-top:2%;
+    margin-bottom:2%;
+    font-size:3em;
+    color:#333;
+}
+
+p.contactDes {
+    font-size: 20px; line-height: 36px; text-align: center; color: #333; margin-bottom: 40px;
+}
+
+element {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    width: 25%;
+    width: calc(25% - ( ( 4% + 4% + 4% ) * 0.25 ) );
+    margin-right: 4%;
+}
+.fusion-layout-column.fusion-one-fourth {
+    width: 25%;
+}
+.fusion-layout-column {
+    position: relative;
+    float: left;
+    margin-bottom: 20px;
+}
+.fusion-column-first {
+    clear: left;
+}
+* {
+    box-sizing: border-box;
+}
+.bg{
+  background-image: url(http://showcase.streamstech.com/wp-content/uploads/2020/01/banner-12x5ft-01-01.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+}

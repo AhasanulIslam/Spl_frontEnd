@@ -1,0 +1,21 @@
+.nav-link {
+  background-color: azure;
+  margin: 10px;
+}
+.nav-link:hover {
+  color: deepskyblue;
+  text-decoration: underline;
+}
+
+.dd-item:hover {
+  background-color: cornflowerblue;
+}
+
+.dd-item-logout{
+  cursor: pointer;
+}
+
+.dd-item-logout:hover {
+  background-color: red;
+}
+

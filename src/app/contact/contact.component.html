@@ -1,0 +1,52 @@
+
+  <hr width="60px" style="border: 1px solid black;">
+  <div>
+      <h2 class = "contactTitle">CONTACT US!</h2>
+  </div>
+
+  <div class  = "container ">
+      <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+              <p class = "contactDes"><strong><span>
+                  {{contactDescription}}
+              </span></strong></p>
+          </div>
+          <div class="col-md-1"></div>
+      </div>
+  </div>
+
+
+  <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+
+          <div class="container-fluid margin-top">
+              <!--<form [formGroup]="contactUsForm" (ngSubmit) = "onContactSubmit()">
+
+                  <div class="form-group align-center" >
+                      <input type = "text" class="form-control" formControlName="name" placeholder="Name" required>
+                    <small *ngIf = "contactUsForm.controls.name.invalid && contactUsForm.controls.name.touched" class="text-danger">username required</small>
+                  </div>
+                  <div class="form-group align-center" >
+                      <input type = "text" class="form-control" formControlName="email" placeholder="Email" >
+                    <small *ngIf = "contactUsForm.controls.email.invalid && contactUsForm.controls.email.touched" class="text-danger">invalid email</small>
+
+                  </div>
+                  <div class="form-group align-center" >
+                      <input type = "text" class="form-control" formControlName="phone" placeholder="Phone" required>
+                    <small *ngIf = "contactUsForm.controls.phone.invalid && contactUsForm.controls.phone.touched" class="text-danger">invalid phone number</small>
+
+                  </div>
+                  <re-captcha (resolved)="resolved($event)" siteKey="6Ld529MUAAAAAP8eLRTv4pDIwH6R1T2yS6G3syFO" style="width: 00px;">
+
+                  </re-captcha>
+                  <br>
+                  <div><button class="btn btn-secondary btn-lg btn-block" type="submit" [disabled]="!captcha || !contactUsForm.valid"  >LET'S TALK</button></div>
+              </form>-->
+          </div>
+      </div>
+      <div class="col-md-4"></div>
+  </div>
+
+

@@ -1,0 +1,28 @@
+<h3 style="background-color: #1a4a72; text-align: center; color: white; padding: 5px">
+  {{title}}
+</h3>
+<form class="container" [formGroup]="addForm" (ngSubmit)="onSubmit()" >
+  <div class="form-group" >
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" formControlName="Name" >
+  </div>
+  <div class="fake-input" class="form-group">
+    <label >Picture</label>
+    <input type="text" class="form-control" formControlName="Picture">
+    <img [src] = "addForm.get('Picture').value" height="70px"/>
+  </div>
+
+  <div class="form-group">
+    <label for="Info">Info</label>
+    <textarea class="form-control" id="Info" rows="3" formControlName="Info"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="Info">Link</label>
+    <input type="text" class="form-control" formControlName="Link">
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Save</button>
+
+</form>

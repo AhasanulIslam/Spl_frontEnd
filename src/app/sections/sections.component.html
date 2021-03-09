@@ -1,0 +1,67 @@
+
+<div    class="container-fluid main mb-5">
+    <div class="row">
+        <div class="col-1 col-md-1 col-sm-1"></div>
+        <div class = "col-7 col-md-7 col-sm-9">
+            <h2>
+                {{secTitle}}
+            </h2>
+            <hr align = "left"> <br>
+            <div style="color: #333333;"> {{ secDescription}} </div>
+
+        </div>
+    </div>
+
+    <div class="p-4">
+
+      <div
+      class="container-fluid mt-5"
+      ng2-carouselamos
+      [width]="800"
+      [items]="items"
+      [$item]="itemTemplate"
+      [$prev]="prevTemplate"
+      [$next]="nextTemplate"
+      (onSelectedItem)="selectedItem = $event.item; selectedIndex = $event.index"
+      ></div>
+
+      <ng-template  #prevTemplate>
+          <div class="pl-5"  *ngIf="isShowable">
+              <span>
+                <img class="" src="https://image.flaticon.com/icons/svg/892/892508.svg" height="40px" width="40px" alt="arrow left">
+              </span>
+         </div>
+      </ng-template>
+
+      <ng-template #nextTemplate>
+          <div class="pr-5" *ngIf="isShowable">
+              <span><img src="https://image.flaticon.com/icons/svg/892/892524.svg" height="40px" width="40px" alt="arrow left" alt="arrow right"></span>
+          </div>
+
+      </ng-template>
+
+      <!-- <div></div> -->
+
+
+
+      <ng-template  #itemTemplate>
+          <div *ngFor="let item of data">
+              <div class="col-md-3 col-sm-6 d-inline-block flex-wrap"   >
+                      <div class="ih-item circle effect4 left_to_right" >
+                          <a [attr.href]='item.Link'>
+
+                              <div class="img">
+                                  <img src="{{item.Picture}}" alt="image" class="img-responsive wp-image-380 p-1">
+                              </div>
+
+                              <div class="info">
+                                      <p style="color: black;text-align: center; padding-top: 15%;">{{item.Info}}</p>
+                              </div>
+                              <div style="text-align: center; margin-top: 10px; color: #007AFF;">{{item.Name}}</div>
+                          </a>
+                      </div>
+              </div>
+          </div>
+      </ng-template>
+    </div>
+</div>

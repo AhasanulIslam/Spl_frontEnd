@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(~fullpage.js/dist/fullpage.min.css);
+//body {
+//
+//    background-image: url(http://showcase.streamstech.com/wp-content/uploads/2020/01/banner-12x5ft-01-01.jpg);
+//    background-position: center center;
+//    background-repeat: no-repeat;
+//    background-size: cover;
+//    height: 100%;
+//    font-family: Montserrat, Arial, Helvetica, sans-serif;
+//    font-size: 1rem;
+//    line-height: 1.2;
+//}
+.bg{
+  background-image: url(assets/img/duSM.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  //height: 100vh;
+  background-attachment: fixed;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+#fp-nav {
+    background-color: rgba(29, 29, 29, 0.66);
+    display: block;
+    border-radius: 15px;
+    padding: 5px 0 5px 0;
+    box-sizing: content-box;
+
+}
+#fp-nav ul li a span {
+    background: #fff;
+}
+
+.fp-tooltip {
+    margin-top: -8px;
+    margin-right: 10px;
+    background-color: rgba(29, 29, 29, 0.66);
+    padding: 8px 10px 8px 10px;
+    border-radius: 15px;
+
+}
+
+.main {
+    position: absolute;
+    top: 15%;
+}
+
+hr {
+    border: 1px solid black;
+    width: 18%;
+
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

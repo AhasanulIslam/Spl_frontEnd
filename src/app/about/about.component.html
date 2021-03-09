@@ -1,0 +1,50 @@
+<div class="container-fluid main">
+    <div class="row">
+    <div class="col-1 col-md-1 col-sm-1"></div>
+    <div class = "col-6 col-md-6 col-sm-8">
+        <div>
+            <img [src]="logo" alt="dulogo" class="img-responsive wp-image-380 p-1" width="200" height="150">
+        </div>
+        <hr align = "left">
+        <br>
+        <h2>
+        </h2>
+        <div style="color: #333333;"> {{ description }} </div>
+    </div>
+    </div>
+<div>
+
+
+
+<div class="container text-center">
+  <h1>{{title}}</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a student by registration or firstname or hallRoll">
+    </div>
+
+     </div>
+   <!-- <table class="table table-striped">-->
+   <table  class="table table-striped table-dark">
+      <thead>
+      <tr>
+        <th>Registration Number</th>
+        <th>First Name</th>
+        <th>Department</th>
+        <th>Hall Roll</th>
+        <th>Session</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let hero of students | filter:searchText">
+        <td>{{hero.registration}}</td>
+        <td>{{hero.firstname}}</td>
+        <td>{{hero.department}}</td>
+        <td>{{hero.hallRoll}}</td>
+        <td>{{hero.session}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>

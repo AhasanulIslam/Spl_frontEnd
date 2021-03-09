@@ -1,0 +1,214 @@
+<h3 style="background-color: #1a4a72; text-align: center; color: white; padding: 5px">
+Stuff Panel</h3>
+
+
+<div class="container text-center">
+  <h1>{{title}}</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a student by registration or firstname or hallRoll">
+    </div>
+
+     </div>
+   <!-- <table class="table table-striped">-->
+   <table  class="table table-striped table-dark">
+      <thead>
+      <tr>
+        <th>Registration Number</th>
+        <th>First Name</th>
+        <th>Hall Roll</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let hero of students | filter:searchText">
+        <td>{{hero.registration}}</td>
+        <td>{{hero.firstname}}</td>
+        <td>{{hero.hallRoll}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+<div class="col-md-6 offset-md-3 mt-5">
+    <div class="card">
+        <h4 class="card-header">Student Info Management</h4>
+        <div class="card-body">
+            <form [formGroup]="stuffFrom" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="registration">Registration</label>
+                    <input type="text" formControlName="registration" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.registration.errors }" />
+                    <div *ngIf="submitted && f.registration.errors" class="invalid-feedback">
+                        <div *ngIf="f.registration.errors.required">registration is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" formControlName="address" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+                    <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                        <div *ngIf="f.address.errors.required">address is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bloodGroup">BloodGroup</label>
+                    <input type="text" formControlName="bloodGroup" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.bloodGroup.errors }" />
+                    <div *ngIf="submitted && f.bloodGroup.errors" class="invalid-feedback">
+                        <div *ngIf="f.bloodGroup.errors.required">bloodGroup is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dateOfBirth">Date of Birth</label>
+                    <input type="text" formControlName="dateOfBirth" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }" />
+                    <div *ngIf="submitted && f.dateOfBirth.errors" class="invalid-feedback">
+                        <div *ngIf="f.dateOfBirth.errors.required">date of birth No is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" formControlName="department" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.department.errors }" />
+                    <div *ngIf="submitted && f.department.errors" class="invalid-feedback">
+                        <div *ngIf="f.department.errors.required">Description is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fatherName">Father Name </label>
+                    <input type="text" formControlName="fatherName" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.fatherName.errors }" />
+                    <div *ngIf="submitted && f.fatherName.errors" class="invalid-feedback">
+                        <div *ngIf="f.fatherName.errors.required">Father name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstname">First Name </label>
+                    <input type="text" formControlName="firstname" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
+                    <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstname.errors.required">first name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hallRoll">Hall Roll </label>
+                    <input type="text" formControlName="hallRoll" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.hallRoll.errors }" />
+                    <div *ngIf="submitted && f.hallRoll.errors" class="invalid-feedback">
+                        <div *ngIf="f.hallRoll.errors.required">hall roll is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname">Last Name </label>
+                    <input type="text" formControlName="lastname" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" />
+                    <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastname.errors.required">last name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="motherName">Mother Name </label>
+                    <input type="text" formControlName="motherName" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.motherName.errors }" />
+                    <div *ngIf="submitted && f.motherName.errors" class="invalid-feedback">
+                        <div *ngIf="f.motherName.errors.required">Mother name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="nationality">Nationality </label>
+                    <input type="text" formControlName="nationality" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }" />
+                    <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
+                        <div *ngIf="f.nationality.errors.required">nationality is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="religion">Religion</label>
+                    <input type="text" formControlName="religion" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.religion.errors }" />
+                    <div *ngIf="submitted && f.religion.errors" class="invalid-feedback">
+                        <div *ngIf="f.religion.errors.required">religion name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="session">Session</label>
+                    <input type="text" formControlName="session" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.session.errors }" />
+                    <div *ngIf="submitted && f.session.errors" class="invalid-feedback">
+                        <div *ngIf="f.session.errors.required">session name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="stuffName">Stuff Name</label>
+                    <input type="text" formControlName="stuffName" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.stuffName.errors }" />
+                    <div *ngIf="submitted && f.stuffName.errors" class="invalid-feedback">
+                        <div *ngIf="f.stuffName.errors.required">stuff name name is required</div>
+                    </div>
+                </div>
+
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Add
+                </button>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
+        </div>
+    
+
+<table class="float-xl-left" class="table table-striped table-dark" border = 1>
+    <td class="font-weight-bold">StudentId</td>
+    <td class="font-weight-bold">Registration</td>
+    <td class="font-weight-bold">Address</td>
+    <td class="font-weight-bold">Blood Group</td>
+    <td class="font-weight-bold">Date of Birth</td>
+    <td class="font-weight-bold">Department</td>
+    <td class="font-weight-bold">Father Name</td>
+    <td class="font-weight-bold">First Name</td>
+    <td class="font-weight-bold">Hall Roll</td>
+    <td class="font-weight-bold">Last Name</td>
+    <td class="font-weight-bold">Mother Name</td>
+    <td class="font-weight-bold">Nationality</td>
+    <td class="font-weight-bold">Religion</td>
+    <td class="font-weight-bold">Session</td>
+    <td class="font-weight-bold">StUff Name</td>
+    <td class="font-weight-bold">Delete</td>
+
+
+<tr  *ngFor="let value of students">
+  
+    <td>{{value.student_Id}}</td>
+    <td>{{value.registration}}</td>
+    <td>{{value.address}}</td>
+    <td>{{value.bloodGroup}}</td>
+    <td>{{value.dateOfBirth}}</td>
+    <td>{{value.department}}</td>
+    <td>{{value.fatherName}}</td>
+    <td>{{value.firstname}}</td>
+    <td>{{value.hallRoll}}</td>
+    <td>{{value.lastname}}</td>
+    <td>{{value.motherName}}</td>
+    <td>{{value.nationality}}</td>
+    <td>{{value.religion}}</td>
+    <td>{{value.session}}</td>
+    <td>{{value.stuffName}}</td>
+    <td><a>
+     <button class="ml-2 btn btn-primary" (click)="deleteStuds(value.student_Id)">
+        Delete
+    </button>
+  </a> <td>
+</tr>
+</table>

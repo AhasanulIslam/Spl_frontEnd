@@ -1,0 +1,11 @@
+<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
+  <div class="section"><app-about></app-about></div>
+  <div class="section" *ngFor = "let section of secLen; let i = index" #sectionRef><app-sections [id] = i+1></app-sections></div>
+  <div class="section"><app-technology-stack></app-technology-stack></div>
+  <div class="section"><app-contact></app-contact></div>
+  <div  style="height: 170px; background-color: #181C19">
+    <div class="text-center text-white pt-5" style="font-size: .8rem">
+      &copy; copyright - {{year | date: 'yyyy'}} | Ahasanul Islam
+    </div>
+  </div>
+</div>

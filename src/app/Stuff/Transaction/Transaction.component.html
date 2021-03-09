@@ -1,0 +1,94 @@
+<h3 style="background-color: #1a4a72; text-align: center; color: white; padding: 5px">
+Stuff Panel</h3>
+
+<div class="col-md-6 offset-md-3 mt-5">
+    <div class="card">
+        <h4 class="card-header">Transaction</h4>
+        <div class="card-body">
+            <form [formGroup]="stuffFrom" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="debit">Debit</label>
+                    <input type="number" formControlName="debit" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.debit.errors }" />
+                    <div *ngIf="submitted && f.debit.errors" class="invalid-feedback">
+                        <div *ngIf="f.debit.errors.required">Debit is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="credit">Credit</label>
+                    <input type="number" formControlName="credit" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.credit.errors }" />
+                    <div *ngIf="submitted && f.credit.errors" class="invalid-feedback">
+                        <div *ngIf="f.credit.errors.required">credit is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="text" formControlName="date" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.date.errors }" />
+                    <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                        <div *ngIf="f.date.errors.required">Date is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="accountTitle">Acoount Title</label>
+                    <input type="text" formControlName="accountTitle" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.accountTitle.errors }" />
+                    <div *ngIf="submitted && f.accountTitle.errors" class="invalid-feedback">
+                        <div *ngIf="f.accountTitle.errors.required">Acoount Title No is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description About Transction</label>
+                    <input type="text" formControlName="description" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+                    <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                        <div *ngIf="f.description.errors.required">Description is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="staffName">Stuff Name </label>
+                    <input type="text" formControlName="staffName" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.staffName.errors }" />
+                    <div *ngIf="submitted && f.staffName.errors" class="invalid-feedback">
+                        <div *ngIf="f.staffName.errors.required">Description is required</div>
+                    </div>
+                </div>
+
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Add
+                </button>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
+        </div>
+
+<table  border = 1>
+    <td class="font-weight-bold">TransactionId</td>
+    <td class="font-weight-bold">Debit</td>
+    <td class="font-weight-bold">Credit</td>
+    <td class="font-weight-bold">Date</td>
+    <td class="font-weight-bold">AccountTitle</td>
+    <td class="font-weight-bold">Description</td>
+    <td class="font-weight-bold">Stuff Name</td>
+    <td class="font-weight-bold">Delete</td>
+
+
+<tr *ngFor="let value of transactions">
+  
+    <td>{{value.transactionId}}</td>
+    <td>{{value.debit}}</td>
+    <td>{{value.credit}}</td>
+    <td>{{value.date}}</td>
+    <td>{{value.accountTitle}}</td>
+    <td>{{value.description}}</td>
+    <td>{{value.staffName}}</td>
+    <td><a>
+     <button class="ml-2 btn btn-primary" (click)="deleteTrns(value.transactionId)">
+        Delete
+    </button>
+  </a> <td>
+</tr>
+</table>

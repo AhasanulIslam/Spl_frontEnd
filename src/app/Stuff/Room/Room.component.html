@@ -1,0 +1,157 @@
+<h3 style="background-color: #1a4a72; text-align: center; color: white; padding: 5px">
+Stuff Panel</h3>
+
+
+<div class="container">
+  <div class="row">
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a room by registration or firstname or hallRoll">
+    </div>
+
+     </div>
+   <!-- <table class="table table-striped">-->
+   <table  class="table table-striped table-dark">
+      <thead>
+      <tr>
+        <th>Hall Roll</th>
+        <th>Room Number</th>
+        <th>Capacity</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let hero of rooms | filter:searchText">
+        <td>{{hero.hallRoll}}</td>
+        <td>{{hero.roomNumber}}</td>
+        <td>{{hero.capacity}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+<div class="col-md-6 offset-md-3 mt-5">
+    <div class="card">
+        <h4 class="card-header">Room</h4>
+        <div class="card-body">
+            <form [formGroup]="stuffFrom" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="roomNumber">Room Number</label>
+                    <input type="number" formControlName="roomNumber" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.roomNumber.errors }" />
+                    <div *ngIf="submitted && f.roomNumber.errors" class="invalid-feedback">
+                        <div *ngIf="f.roomNumber.errors.required">Room number is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="capacity">Capacity of Student</label>
+                    <input type="number" formControlName="capacity" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.capacity.errors }" />
+                    <div *ngIf="submitted && f.capacity.errors" class="invalid-feedback">
+                        <div *ngIf="f.capacity.errors.required">Capacity is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="building">Building Name or Building Block</label>
+                    <input type="text" formControlName="building" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.building.errors }" />
+                    <div *ngIf="submitted && f.building.errors" class="invalid-feedback">
+                        <div *ngIf="f.building.errors.required">Building name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentPhoneNo">Student Phone No</label>
+                    <input type="text" formControlName="studentPhoneNo" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.studentPhoneNo.errors }" />
+                    <div *ngIf="submitted && f.studentPhoneNo.errors" class="invalid-feedback">
+                        <div *ngIf="f.studentPhoneNo.errors.required">Student Phone no name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="admitDate">Hall Admit Date</label>
+                    <input type="text" formControlName="admitDate" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.admitDate.errors }" />
+                    <div *ngIf="submitted && f.admitDate.errors" class="invalid-feedback">
+                        <div *ngIf="f.admitDate.errors.required">AdmitDate is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="leftDate">Hall Left Date </label>
+                    <input type="text" formControlName="leftDate" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.leftDate.errors }" />
+                    <div *ngIf="submitted && f.leftDate.errors" class="invalid-feedback">
+                        <div *ngIf="f.leftDate.errors.required">Building name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hallFee">Hall Fee</label>
+                    <input type="text" formControlName="hallFee" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.hallFee.errors }" />
+                    <div *ngIf="submitted && f.hallFee.errors" class="invalid-feedback">
+                        <div *ngIf="f.hallFee.errors.required">hallFee is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="feeYear">Fee Description and Date</label>
+                    <input type="text" formControlName="feeYear" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.feeYear.errors }" />
+                    <div *ngIf="submitted && f.feeYear.errors" class="invalid-feedback">
+                        <div *ngIf="f.feeYear.errors.required">feeYear is required</div>
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label for="hallRoll">Hall Roll</label>
+                    <input type="text" formControlName="hallRoll" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.hallRoll.errors }" />
+                    <div *ngIf="submitted && f.hallRoll.errors" class="invalid-feedback">
+                        <div *ngIf="f.hallRoll.errors.required">HallRoll is required</div>
+                    </div>
+                </div>
+               
+
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Add Room
+                </button>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
+        </div>
+
+<table class="table table-striped table-dark" border = 1>
+    <td class="font-weight-bold">RoomId</td>
+    <td class="font-weight-bold">Room Number</td>
+    <td class="font-weight-bold">Capacity of Student</td>
+    <td class="font-weight-bold">Building or Block Name</td>
+    <td class="font-weight-bold">Phone No</td>
+    <td class="font-weight-bold">Admit_Date</td>
+    <td class="font-weight-bold">Left_Date</td>
+    <td class="font-weight-bold">Hall_Fee</td>
+    <td class="font-weight-bold">Description and Date</td>
+    <td class="font-weight-bold">Hall_Roll</td>
+
+    <td class="font-weight-bold">Delete</td>
+
+
+<tr *ngFor="let value of rooms">
+  
+    <td>{{value.room_Id}}</td>
+    <td>{{value.roomNumber}}</td>
+    <td>{{value.capacity}}</td>
+    <td>{{value.building}}</td>
+    <td>{{value.studentPhoneNo}}</td>
+    <td>{{value.admitDate}}</td>
+    <td>{{value.leftDate}}</td>
+    <td>{{value.hallFee}}</td>
+    <td>{{value.feeYear}}</td>
+    <td>{{value.hallRoll}}</td>
+    <td><a>
+     <button class="ml-2 btn btn-primary" (click)="deleteRooms(value.room_Id)">
+        Delete
+    </button>
+  </a> <td>
+</tr>
+</table>
