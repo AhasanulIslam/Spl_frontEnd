@@ -1,4 +1,3 @@
-import { Inventory } from 'e:/Angular/Hall_Management_System/src/app/_models/inventory';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -6,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { User } from '../_models';
+import { Inventory } from '../_models/inventory';
 
 @Injectable({ providedIn: 'root' })
 // tslint:disable-next-line:class-name

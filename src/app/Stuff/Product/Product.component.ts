@@ -56,15 +56,48 @@ export class ProductComponent implements OnInit {
           }
         );
   }
-  deleteProducts(productId: number) {
-    this.adminService.productDeOption(+productId).subscribe(
-      (res) => {
-        console.log(res);
-        window.location.reload();
-      }
-    );
-    console.log(productId);
-  }
+  // deleteProducts(productId: number) {
+  //   this.adminService.productDeOption(+productId).subscribe(
+  //     (res) => {
+  //       console.log(res);
+  //       window.location.reload();
+  //     }
+  //   );
+  //   console.log(productId);
+  // }
+
+
+
+  // setDelete(staffId: number, stuf: Staff){
+    setDelete(productId: number, pro: Product){
+
+
+      console.log(productId);
+      console.log("Deleting...");
+  
+      this.adminService.productDeOption(+productId).subscribe(
+        (res) => {
+          console.log("Result is:");
+          console.log(res);
+          window.location.reload();
+        }
+      );
+      console.log(productId);
+  
+      pro.isOpenDelete = false;
+      
+    }
+  
+    setCancel(pro: Product){
+  
+      pro.isOpenDelete = false;
+    }
+  
+    deleteProducts(pro: Product) {
+      pro.isOpenDelete = true;
+    }
+
+
 
   // convenience getter for easy access to form fields
   get f() { return this.stuffFrom.controls; }

@@ -1,10 +1,10 @@
-<h3 style="background-color: #1a4a72; text-align: center; color: white; padding: 5px">
-Stuff Panel</h3>
+<!-- <h3 style="background-color: #1a4a72; text-align: center; color: white; padding: 5px">
+Stuff Panel</h3> -->
 
 
 
 <div class="container text-center">
-  <h1>{{title}}</h1>
+  <!-- <h1>{{title}}</h1> -->
 </div>
 <div class="container">
   <div class="row">
@@ -124,9 +124,13 @@ Stuff Panel</h3>
     <td>{{value.rate}}</td>
     <td>{{value.availableProduct}}</td>
     <td><a>
-     <button class="ml-2 btn btn-primary" (click)="deleteProducts(value.productId)">
+     <button class="ml-2 btn btn-primary" (click)="deleteProducts(value)">
         Delete
     </button>
+    <div *ngIf = "value.isOpenDelete">
+        <button type="button" class="btn btn-danger" (click)="setDelete(value.productId, value)">Delete</button>
+        <button type="button" class="btn btn-primary" (click)="setCancel(value)">Cancel</button>
+      </div>
   </a> <td>
 </tr>
 </table>

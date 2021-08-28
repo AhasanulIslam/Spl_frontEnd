@@ -1,5 +1,87 @@
-<h3 style="background-color: #1a4a72; text-align: center; color: white; padding: 5px">
-Stuff Panel</h3>
+<!--  <h3 style="background-color: #1a4a72; text-align: center; color: white; padding: 5px">
+Stuff Panel</h3> 
+
+
+
+
+<div class="container text-center">
+    <!-- <h1>{{title}}</h1> -->
+  <!-- </div>
+  <div class="container">
+    <div class="row">
+      <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a product by registration or firstname or hallRoll">
+      </div>
+  
+       </div>
+      <table class="table table-striped">-->
+     <!-- <table  class="table table-striped table-dark">
+        <thead>
+        <tr>
+          <th>Transaction Id</th>
+          <th>Debit</th>
+          <th>Credit</th>
+          <th>Date</th>
+          <th>Acciunt Title</th>
+          <th>Description</th>
+          <th>Staff Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let hero of transactions | filter:searchText">
+          <td>{{hero.transactionId}}</td>
+          <td>{{hero.debit}}</td>
+          <td>{{hero.credit}}</td>
+          <td>{{hero.date}}</td>
+          <td>{{hero.accountTitle}}</td>
+          <td>{{hero.description}}</td>
+          <td>{{hero.staffName}}</td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div> -->
+
+<br><br><br>
+    
+<div class="container text-center">
+  <!-- <h1>{{title}}</h1> -->
+
+</div>
+<div class="container">
+  <div class="row">
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a transactions by registration or firstname or hallRoll">
+    </div>
+<br><br><br>
+     </div>
+   <!-- <table >-->
+   <table  class="table table-striped">
+      <thead>
+      <tr>
+        <th>Transaction Id</th>
+          <th>Debit</th>
+          <th>Credit</th>
+          <th>Date</th>
+          <th>Acciunt Title</th>
+          <th>Description</th>
+          <th>Staff Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let hero of transactions | filter:searchText">
+        <td>{{hero.transactionId}}</td>
+        <td>{{hero.debit}}</td>
+        <td>{{hero.credit}}</td>
+        <td>{{hero.date}}</td>
+        <td>{{hero.accountTitle}}</td>
+        <td>{{hero.description}}</td>
+        <td>{{hero.staffName}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+   
 
 <div class="col-md-6 offset-md-3 mt-5">
     <div class="card">

@@ -19,6 +19,8 @@ export class Room_TeacherComponent implements OnInit {
   returnUrl: string;
   error = '';
   rooms: Room[];
+  searchText;
+
 
   constructor(
       private formBuilder: FormBuilder,

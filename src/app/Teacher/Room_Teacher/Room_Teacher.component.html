@@ -1,5 +1,40 @@
-<h3 style="background-color: #1a4a72; text-align: center; color: white; padding: 5px">
-Stuff Panel</h3>
+<!-- <h3 style="background-color: #1a4a72; text-align: center; color: white; padding: 5px">
+Stuff Panel</h3> -->
+<br>
+<br>
+<br>
+
+
+<div  class="container">
+    <div class="row">
+      <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a room by registration or firstname or hallRoll">
+      </div>
+
+      <br><br><br>
+  
+       </div>
+     <!-- <table class="table table-striped">-->
+     <table  class="table table-striped table-dark">
+        <thead>
+        <tr>
+          <th>Hall Roll</th>
+          <th>Room Number</th>
+          <th>Capacity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let hero of rooms | filter:searchText">
+          <td>{{hero.hallRoll}}</td>
+          <td>{{hero.roomNumber}}</td>
+          <td>{{hero.capacity}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <br>
+    <br><br><br>
 
 <div class="col-md-6 offset-md-3 mt-5">
     <div class="card">

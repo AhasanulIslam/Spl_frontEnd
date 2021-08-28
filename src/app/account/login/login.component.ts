@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
             if (this.User.access_Level === 'teacher') {
               this.router.navigate(['/teacher']);
             } else if (this.User.access_Level === 'stuff') {
-              this.router.navigate(['/stuff']);
+              this.router.navigate(['/stuff/student']);
             }
           }
         },

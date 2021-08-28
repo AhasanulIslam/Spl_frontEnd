@@ -8,7 +8,7 @@
   <ul class="navbar-nav ml-5">
     <li class="nav-item">
       <div ngbDropdown class="d-inline-block">
-        <button class="btn btn-light" id="dropdownBasic1" ngbDropdownToggle> <b>Sections</b> </button>
+        <button class="btn btn-light" id="dropdownBasic1" ngbDropdownToggle> <b>Account Sections</b> </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <a ngbDropdownItem class="dd-item" routerLink="/admin">
               <b>Show Account</b>
@@ -24,16 +24,63 @@
           <a ngbDropdownItem class="dd-item" routerLink="/admin/delete">
             <b> Delete Account </b>
           </a>
+          
         </div>
       </div>
     </li>
+
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-light" id="dropdownBasic1" ngbDropdownToggle> <b>Management Section</b> </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <div *ngFor="let section of sections">
+          <a ngbDropdownItem class="dd-item" routerLink="/admin/section/{{section.Id}}">
+            <b>{{section.Title}}</b>
+          </a>
+        </div>
+         <a ngbDropdownItem class="dd-item" routerLink="/admin/student">
+          <b> Student Section </b>
+        </a>
+        <a ngbDropdownItem class="dd-item" routerLink="trns">
+          <b> Transaction </b>
+        </a>
+         <a ngbDropdownItem class="dd-item" routerLink="/admin/room">
+          <b> Room </b>
+        </a>
+        <a ngbDropdownItem class="dd-item" routerLink="/admin/inven">
+          <b> Inventory </b>
+        </a>
+         <a ngbDropdownItem class="dd-item" routerLink="/admin/product">
+          <b> Product </b>
+        </a>
+      </div>
+          
+
+          <!-- <a ngbDropdownItem class="dd-item" routerLink="/stuff/student">
+            <b> Student Section </b>
+          </a>
+          <a ngbDropdownItem class="dd-item" routerLink="trns">
+            <b> Transaction </b>
+          </a>
+           <a ngbDropdownItem class="dd-item" routerLink="/stuff/room">
+            <b> Room </b>
+          </a>
+          <a ngbDropdownItem class="dd-item" routerLink="/stuff/inven">
+            <b> Inventory </b>
+          </a>
+           <a ngbDropdownItem class="dd-item" routerLink="/stuff/product">
+            <b> Product </b>
+          </a> -->
+        </div>
+      <!-- </div> -->
+    <!-- </li> -->
+
     <li class="nav-item">
       <div ngbDropdown class="d-inline-block">
         <button class="btn btn-light" ngbDropdownToggle> <b>Admin</b> </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <a ngbDropdownItem class="dd-item" routerLink="/admin/manage-sections">
+          <!-- <a ngbDropdownItem class="dd-item" routerLink="/admin/manage-sections">
             <b>Manage Sections</b>
-          </a>
+          </a> -->
           <a ngbDropdownItem class="dd-item" routerLink="/admin/changePassword">
             <b>Change Password</b>
           </a>

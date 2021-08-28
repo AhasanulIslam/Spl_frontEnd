@@ -56,12 +56,13 @@ export class AdminTechStackComponent implements OnInit {
       this.authenticationService.register(this.f.username.value, this.f.password.value, this.f.email.value, this.f.phone.value, this.f.access.value)
           .subscribe(
               data => {
-                  this.router.navigate(['']);
+                  this.router.navigate(['admin']);
                   console.log(data);
               },
               error => {
                   this.error = error;
                   this.loading = false;
               });
+
   }
 }

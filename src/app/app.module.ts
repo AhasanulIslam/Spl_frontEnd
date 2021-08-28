@@ -1,3 +1,4 @@
+import { ConfirmationDialogService } from './dialog/confirmation-dialog.service';
 import { InventoryComponent } from './Stuff/Inventory/Inventory.component';
 import { StudentComponent } from './Stuff/Student/Student.component';
 import { ProductComponent } from './Stuff/Product/Product.component';
@@ -39,6 +40,8 @@ import { DeleteAccountComponent } from './deleteAccount/deleteAccount.component'
 import { Room_TeacherComponent } from './Teacher/Room_Teacher/Room_Teacher.component';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ConfirmationDialogComponent } from './dialog/confirmation-dialog/confirmation-dialog.component';
+// import { DialogComponent } from './shared/dialog/dialog.component';
 
 
 @NgModule({
@@ -69,8 +72,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       ProductComponent,
       StudentComponent,
       InventoryComponent,
-      Room_TeacherComponent
-   ],
+      Room_TeacherComponent,
+      ConfirmationDialogComponent,
+       ],
   imports: [
     BrowserModule,
     Ng2SearchPipeModule,
@@ -84,9 +88,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     DragDropModule,
     BrowserAnimationsModule,
     RecaptchaModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    
   ],
-  providers: [],
+  providers: [ConfirmationDialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

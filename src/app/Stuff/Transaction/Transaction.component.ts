@@ -18,6 +18,8 @@ export class TransactionComponent implements OnInit {
   returnUrl: string;
   error = '';
   transactions: Transaction[];
+  searchText;
+
 
   constructor(
       private formBuilder: FormBuilder,

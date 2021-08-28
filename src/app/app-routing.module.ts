@@ -52,7 +52,13 @@ const routes: Routes = [
       {path: 'tech/edit/:id', component: EditTechComponent},
       {path: 'changePassword', component: ChangePasswordComponent},
       {path: 'manage-sections', component: SectionManagementComponent},
-      {path: 'delete', component: DeleteAccountComponent}
+      {path: 'delete', component: DeleteAccountComponent},
+      {path: 'student', component: StudentComponent},
+      {path: 'inven', component: InventoryComponent},
+      {path: 'product', component: ProductComponent},
+      {path: 'room', component: RoomComponent},
+      {path: 'trns', component: TransactionComponent},
+
 
     ],
     canActivate: [AuthGuard]
@@ -60,6 +66,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent}
 
 ];
+
 
 @NgModule({
   // imports: [RouterModule.forRoot(routes)],

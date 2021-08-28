@@ -6,4 +6,6 @@ export interface Product {
     purchaseProduct: number;
     rate: number;
     availableProduct: number;
+    isOpenDelete: boolean;
+
 }

@@ -8,4 +8,5 @@ export interface Staff {
     staffId: number;
     token: null;
     username: string;
+    isOpenDelete: boolean;
 }
